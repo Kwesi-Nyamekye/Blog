@@ -1,114 +1,153 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Reset and defaults */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
     background-color: #f4f4f4;
+    margin: 0; /* Ensure no default margins */
 }
 
-/* Content container */
 .container {
-    max-width: 800px;
+    width: 80%;
     margin: 0 auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Clearfix */
 }
 
-/* Heading styles */
-h1 {
-    font-size: 3rem;
-    color: #333;
-    margin-bottom: 1rem;
-    text-align: center;
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-/* Meta information styles */
-.date {
-    font-size: 1rem;
-    color: #777;
-    text-align: center;
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Post body styles */
-.post-body {
-    font-size: 1.2rem;
-    color: #444;
-    line-height: 1.8;
-    margin-top: 2rem;
-}
-
-/* Share link styles */
-.post-body a {
-    color: #6305dd;
+header .logo {
+    font-size: 1.5rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: #fff;
 }
 
-.post-body a:hover {
-    color: #390281;
+/* Navigation */
+nav ul {
+    list-style-type: none;
 }
 
-/* Comments section styles */
-.comments {
-    margin-top: 2rem;
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
-.comments h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1rem;
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.post-body {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Comments */
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-section h2 {
+    margin-bottom: 10px;
 }
 
 .comment {
-    border-bottom: 1px solid #ccc;
-    padding: 1rem 0;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.comment p.info {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 0.5rem;
+.comment .info {
+    color: #666;
+    font-size: 0.8em;
+    margin-bottom: 5px;
 }
 
 .comment p {
-    font-size: 1.1rem;
-    color: #555;
     line-height: 1.6;
 }
 
-/* Form styles */
-.comment-form {
-    margin-top: 2rem;
+/* New Comment Form */
+.new-comment {
+    margin-top: 20px;
 }
 
-.comment-form h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 1rem;
+.new-comment h2 {
+    margin-bottom: 10px;
 }
 
-.comment-form form {
-    margin-top: 1rem;
+.new-comment form {
+    margin-top: 10px;
 }
 
-.comment-form form p {
-    margin-bottom: 1rem;
-}
-
-.comment-form input[type="submit"] {
-    background-color: #390281;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
+.new-comment form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    border-radius: 3px;
 }
 
-.comment-form input[type="submit"]:hover {
-    background-color: #6305dd;
+.new-comment form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust container width for smaller screens */
+    }
+
+    header .logo {
+        font-size: 1.2rem; /* Decrease logo font size for smaller screens */
+    }
 }
