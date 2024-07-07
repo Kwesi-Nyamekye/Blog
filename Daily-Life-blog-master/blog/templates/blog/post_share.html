@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %} Share a Post {% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/share_post.css" %}"/>
+{% endblock %}
+
+<div id="content">
+ {% block content %}
+    {% if sent %}
+        <h1>E-mail successfully sent</h1>
+        <p>
+            "{{ post.title }}" was successfully sent to {{ form.cleaned_data.email }}
+        </p>
+    {% else %}
+        <h1>Share "{{ post.title }}" by e-mail</h1>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="Send e-mail">
+        </form>
+    {% endif %}
+ {% endblock %}
+</div>
