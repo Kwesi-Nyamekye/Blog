@@ -5,20 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'blog/app.css'%}">
-    {% block css_files %} {% endblock %}
-    
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/base.css' %}">
+    {% block css_files %}{% endblock %}
 </head>
 <body>
-    <div id="content">
-        {% block content %}
-        {% endblock %}
+    <header id="header">
+        <div class="container">
+            <h1 class="logo">My Blog</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main id="content">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <aside id="sidebar">
+            <h2>About My Blog</h2>
+            <p>Welcome to my blog where we discuss...</p>
+        </aside>
     </div>
 
-    <div id="sidebar">
-        <h2>My Blog</h2>
-        <p>This is my blog</p>
-    </div>
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 My Blog. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
